@@ -1,15 +1,15 @@
 package br.com.estoque.domain;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.validation.constraints.Min;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
@@ -24,7 +24,6 @@ public class Produto implements Serializable {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produto_id_seq")
   private Long id;
   private String descricao;
-  @Min(1)
   private Double preco;
 
   @ManyToOne
